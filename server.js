@@ -3,7 +3,7 @@ var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '',
-  database : '' // Input a database
+  database : 'JournalMe' // Input a database
 });
 connection.connect(function(err){
 if(!err) {
@@ -16,8 +16,8 @@ if(!err) {
 module.exports = connection;
 
 var express    = require("express");
-var login = require('./routes/loginroutes');
-var register = require('./routes/register');
+//var login = require('./routes/loginroutes');
+//var register = require('./routes/register');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
@@ -53,8 +53,8 @@ app.get('/', function(req, res) {
     res.json({ message: 'welcome to our upload module apis' });
 });
 //route to handle user registration
-app.post('/register',login.register);
-app.post('/login',login.login);
+//app.post('/register',login.register);
+//app.post('/login',login.login);
 
 // API routes starts here
 
@@ -208,4 +208,4 @@ router.delete('/urls/:url_id', function (req, res) {
 });
 
 app.use('/api', passport.authenticate('basic', { session: false }), router);
-app.listen(9001);
+app.listen(3306);

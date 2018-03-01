@@ -23,7 +23,11 @@
     "express": "^4.16.2",
     "font-awesome": "4.7.0",
     "jquery": "3.3.1",
-    "path": "^0.12.7"
+    "mysql": "^2.15.0",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "path": "^0.12.7",
+    "sql": "^0.78.0"
   },
   "devDependencies": {
     "browser-sync": "2.23.6",
